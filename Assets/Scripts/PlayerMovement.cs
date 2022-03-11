@@ -5,6 +5,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float speed;
     private Rigidbody2D body;
     private Animator anim;
+    [SerializeField] float size; 
 
     private void Awake()
     {
@@ -19,9 +20,9 @@ public class PlayerMovement : MonoBehaviour
 
         //Flip player when moving right left
         if (horizontalInput > 0.01f)
-            transform.localScale = Vector3.one;
+            transform.localScale = new Vector3(size,size,size);
         else if (horizontalInput < -0.01f)
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(-size, size, size);
 
         anim.SetBool("Walk", horizontalInput != 0);
 
