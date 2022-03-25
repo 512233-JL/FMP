@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 
 public class SceneTrigger : MonoBehaviour
 {
+    public TextMeshProUGUI pressE;
 
     public bool trigger = false;
 
@@ -26,7 +29,9 @@ public class SceneTrigger : MonoBehaviour
 
         if(collision.tag == "Player")
         {
-            
+
+            pressE.gameObject.SetActive(true);
+
             if (Input.GetKey("e"))
             {
               
