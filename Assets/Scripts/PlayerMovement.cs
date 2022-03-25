@@ -8,6 +8,9 @@ public class PlayerMovement : MonoBehaviour
     private Animator anim;
     [SerializeField] float size;
     public bool isAttacking;
+
+    public GameObject hitbox;
+    public GameObject kickHitbox;
     private void Awake()
     {
         body = GetComponent<Rigidbody2D>();
@@ -32,12 +35,14 @@ public class PlayerMovement : MonoBehaviour
             // StartCoroutine(AnimationEnd());
             isAttacking = true;
             anim.SetBool("IsPunching", true);
+            hitbox.SetActive(true); 
         }
         if (Input.GetKey(KeyCode.Mouse1) && isAttacking == false)
         {
             // StartCoroutine(AnimationEnd());
             isAttacking = true;
             anim.SetBool("IsKicking", true);
+            kickHitbox.SetActive(true);
         }
 
     }
