@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HealthBar : MonoBehaviour
 {
@@ -21,7 +22,9 @@ public class HealthBar : MonoBehaviour
         if (health <= 0)
         {
             Debug.Log("dead");
+            SceneManager.LoadScene("Game Over");
         }
+        
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
