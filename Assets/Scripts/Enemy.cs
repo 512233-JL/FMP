@@ -29,6 +29,9 @@ public class Enemy : MonoBehaviour
         }
     }
 
+
+
+
     //IEnumerator EnemyDeath()
     //{
     //    animator.SetBool("IsHit", true);
